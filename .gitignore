@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.env
+tally-connect.log
+tally-agent.exe
+last-sync-status.txt

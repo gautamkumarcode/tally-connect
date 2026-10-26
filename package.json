@@ -1,0 +1,32 @@
+{
+  "name": "tally-connect",
+  "version": "1.0.0",
+  "description": "Office laptop agent — pulls Credit Notes from Tally ERP and upserts into MongoDB Atlas. Packaged as a self-contained .exe so the laptop needs no Node.js.",
+  "main": "dist/agent.js",
+  "scripts": {
+    "start": "node dist/agent.js",
+    "build": "tsc",
+    "build:exe": "tsc && pkg dist/agent.js --targets node18-win-x64 --output tally-agent.exe",
+    "dev": "npx ts-node --transpile-only src/agent.ts",
+    "run-once": "node dist/agent.js"
+  },
+  "pkg": {
+    "assets": [],
+    "scripts": [
+      "dist/agent.js"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.5.1",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/xml2js": "^0.4.14",
+    "@yao-pkg/pkg": "^5.16.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
